@@ -9,6 +9,7 @@ class Booking extends Controller
 {
     public function add()
     {   
+        $data['session'] = session();
         $model = new BookingModel;
         $model2 = new HotelModel;
         $model3 = new UserModel;
@@ -63,6 +64,7 @@ class Booking extends Controller
 
     public function edit($id)
     {
+        $data['session'] = session();
         $model = new BookingModel;
         $model2 = new HotelModel;
         $model3 = new UserModel;

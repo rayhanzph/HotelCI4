@@ -7,6 +7,7 @@ class Hotel extends Controller
 {
     public function add()
     {   
+        $data['session'] = session();
         if(isset($_SESSION['logged_in'])){
             echo view('admin/hotel/add');
         } else{
@@ -52,6 +53,7 @@ class Hotel extends Controller
 
     public function edit($id)
     {
+        $data['session'] = session();
         $model = new HotelModel;
         $get = $model->get($id);
         if(isset($_SESSION['logged_in'])){

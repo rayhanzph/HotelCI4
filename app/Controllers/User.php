@@ -7,6 +7,7 @@ class User extends Controller
 {
     public function add($role)
     {   
+        $data['session'] = session();
         if(isset($_SESSION['logged_in'])){
             if($role == 'user'){
                 echo view('admin/customer/add');
@@ -49,6 +50,7 @@ class User extends Controller
 
     public function edit($id, $role)
     {
+        $data['session'] = session();
         $model = new UserModel;
         $get = $model->get($role, $id)->getRow();
         if(isset($_SESSION['logged_in'])){

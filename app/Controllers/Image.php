@@ -8,6 +8,7 @@ class Image extends Controller
 {
     public function add($id)
     {   
+        $data['session'] = session();
         if(isset($_SESSION['logged_in'])){
             $model = new ImageModel;
             $data['image'] = $model->get($id);
